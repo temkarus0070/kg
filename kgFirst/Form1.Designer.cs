@@ -28,13 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.DdaBtn = new System.Windows.Forms.Button();
+            this.brzBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // DdaBtn
+            // 
+            this.DdaBtn.Location = new System.Drawing.Point(13, 13);
+            this.DdaBtn.Name = "DdaBtn";
+            this.DdaBtn.Size = new System.Drawing.Size(75, 23);
+            this.DdaBtn.TabIndex = 0;
+            this.DdaBtn.Text = "DDA";
+            this.DdaBtn.UseVisualStyleBackColor = true;
+            this.DdaBtn.Click += new System.EventHandler(this.DdaBtn_Click);
+            // 
+            // brzBtn
+            // 
+            this.brzBtn.Location = new System.Drawing.Point(138, 12);
+            this.brzBtn.Name = "brzBtn";
+            this.brzBtn.Size = new System.Drawing.Size(75, 23);
+            this.brzBtn.TabIndex = 1;
+            this.brzBtn.Text = "Brezhenheim";
+            this.brzBtn.UseVisualStyleBackColor = true;
+            this.brzBtn.Click += new System.EventHandler(this.brzBtn_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(741, 551);
+            this.Controls.Add(this.brzBtn);
+            this.Controls.Add(this.DdaBtn);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint_1);
@@ -43,6 +67,9 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Button DdaBtn;
+        private System.Windows.Forms.Button brzBtn;
     }
 }
 

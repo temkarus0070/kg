@@ -23,7 +23,7 @@ namespace kgFirst
 
         {
 
-
+            
           
             this.DoubleBuffered = true;
             Rectangle rect = new Rectangle(new Point(0, 0), new Size(100, 100));
@@ -33,23 +33,12 @@ namespace kgFirst
             g.DrawBezier(Pens.RosyBrown, new Point(0, 0), new Point(50, 400), new Point(100, 560), new Point(500, 500));
             g.DrawRectangle(Pens.Aqua, rect);
             g.FillRectangle(Brushes.Cornsilk, rect);
+           // Second.Brezhenheim(g, 0, 0, 500, 500);
+          //  Second.DDA( g, 0, 0, 900, 900);
 
         }
 
-        private void DDA(int x1,int y1,int x2,int y2)
-        {
-            float L = Math.Max(Math.Abs(x2 - x1), Math.Abs(y2 - y1));
-            float dx = (x2 - x1) / L;
-            float dy = (y2 - y1) / L;
-            float x = x1;
-            float y = y1;
-            for(int i=0;i<= L;i++)
-            {
-                x += dx;
-                y += dy;
-                g.FillRectangle(Brushes.Black, x, y, 1, 1);
-            }
-        }
+
 
 
         private void BRE(int x1,int y1,int x2,int y2)
@@ -80,8 +69,36 @@ namespace kgFirst
             g.Clear(Color.White);
               Draw();
 
-            //DDA(0, 0, 50, 50);
-           // BRE(50, 50, 0, 0);
+        }
+
+        private void DdaBtn_Click(object sender, EventArgs e)
+        {
+            this.Paint += ActiveForm_Paint;
+            this.Invalidate();
+            this.Update();
+         
+           
+       
+        }
+
+        private void ActiveForm_Paint(object sender, PaintEventArgs e)
+        {
+
+            g.Clear(Color.White);
+            Second.DDA(g, 0, 0, 500, 500);
+        }
+
+        private void brzBtn_Click(object sender, EventArgs e)
+        {
+            this.Paint += Form1_Paint;
+            this.Invalidate();
+            this.Update();
+        }
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            g.Clear(Color.White);
+            Second.Brezhenheim(g, 50, 50, 500, 500);
         }
     }
 }
