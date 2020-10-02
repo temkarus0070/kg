@@ -100,5 +100,18 @@ namespace kgFirst
             g.Clear(Color.White);
             Second.Brezhenheim(g, 50, 50, 500, 500);
         }
+
+        private void byBtn_Click(object sender, EventArgs e)
+        {
+            this.Paint += Form1_Paint1;
+            this.Invalidate();
+            this.Update();
+        }
+
+        private void Form1_Paint1(object sender, PaintEventArgs e)
+        {
+            g.Clear(Color.White);
+            new Second().ByDrawLine(g, 300, 300, 500, 500);
+        }
     }
 }

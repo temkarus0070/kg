@@ -30,6 +30,7 @@
         {
             this.DdaBtn = new System.Windows.Forms.Button();
             this.brzBtn = new System.Windows.Forms.Button();
+            this.byBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // DdaBtn
@@ -52,11 +53,22 @@
             this.brzBtn.UseVisualStyleBackColor = true;
             this.brzBtn.Click += new System.EventHandler(this.brzBtn_Click);
             // 
+            // byBtn
+            // 
+            this.byBtn.Location = new System.Drawing.Point(262, 11);
+            this.byBtn.Name = "byBtn";
+            this.byBtn.Size = new System.Drawing.Size(75, 23);
+            this.byBtn.TabIndex = 2;
+            this.byBtn.Text = "ВУ";
+            this.byBtn.UseVisualStyleBackColor = true;
+            this.byBtn.Click += new System.EventHandler(this.byBtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(741, 551);
+            this.Controls.Add(this.byBtn);
             this.Controls.Add(this.brzBtn);
             this.Controls.Add(this.DdaBtn);
             this.Name = "Form1";
@@ -70,6 +82,7 @@
 
         private System.Windows.Forms.Button DdaBtn;
         private System.Windows.Forms.Button brzBtn;
+        private System.Windows.Forms.Button byBtn;
     }
 }
 
