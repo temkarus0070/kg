@@ -1,4 +1,5 @@
-﻿using System;
+﻿using kgFirst.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -85,7 +86,7 @@ namespace kgFirst
         {
 
             g.Clear(Color.White);
-            Second.DDA(g, 0, 0, 500, 500);
+            DrawLine.DDA(g, 0, 0, 500, 500);
         }
 
         private void brzBtn_Click(object sender, EventArgs e)
@@ -98,7 +99,7 @@ namespace kgFirst
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
             g.Clear(Color.White);
-            Second.Brezhenheim(g, 50, 50, 500, 500);
+            DrawLine.Brezhenheim(g, 50, 50, 500, 500);
         }
 
         private void byBtn_Click(object sender, EventArgs e)
@@ -111,7 +112,13 @@ namespace kgFirst
         private void Form1_Paint1(object sender, PaintEventArgs e)
         {
             g.Clear(Color.White);
-            new Second().ByDrawLine(g, 300, 300, 500, 500);
+            new DrawLine().ByDrawLine(g, 300, 300, 500, 500);
+        }
+
+        private void ChartBtn_Click(object sender, EventArgs e)
+        {
+            ChartForm form = new ChartForm();
+            form.Show();
         }
     }
 }

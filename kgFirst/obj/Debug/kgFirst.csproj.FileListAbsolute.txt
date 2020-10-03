@@ -7,3 +7,14 @@
 \\csfs\home$\pretkov_a_i\profile\my documents\visual studio 2015\Projects\kgFirst\kgFirst\obj\Debug\kgFirst.csproj.GenerateResource.Cache
 \\csfs\home$\pretkov_a_i\profile\my documents\visual studio 2015\Projects\kgFirst\kgFirst\obj\Debug\kgFirst.exe
 \\csfs\home$\pretkov_a_i\profile\my documents\visual studio 2015\Projects\kgFirst\kgFirst\obj\Debug\kgFirst.pdb
+C:\Users\termi\source\repos\c#\vsu\cg\kgTasks\kgFirst\bin\Debug\kgFirst.exe.config
+C:\Users\termi\source\repos\c#\vsu\cg\kgTasks\kgFirst\bin\Debug\kgFirst.exe
+C:\Users\termi\source\repos\c#\vsu\cg\kgTasks\kgFirst\bin\Debug\kgFirst.pdb
+C:\Users\termi\source\repos\c#\vsu\cg\kgTasks\kgFirst\obj\Debug\kgFirst.csprojAssemblyReference.cache
+C:\Users\termi\source\repos\c#\vsu\cg\kgTasks\kgFirst\obj\Debug\kgFirst.Form1.resources
+C:\Users\termi\source\repos\c#\vsu\cg\kgTasks\kgFirst\obj\Debug\kgFirst.Properties.Resources.resources
+C:\Users\termi\source\repos\c#\vsu\cg\kgTasks\kgFirst\obj\Debug\kgFirst.csproj.GenerateResource.cache
+C:\Users\termi\source\repos\c#\vsu\cg\kgTasks\kgFirst\obj\Debug\kgFirst.csproj.CoreCompileInputs.cache
+C:\Users\termi\source\repos\c#\vsu\cg\kgTasks\kgFirst\obj\Debug\kgFirst.exe
+C:\Users\termi\source\repos\c#\vsu\cg\kgTasks\kgFirst\obj\Debug\kgFirst.pdb
+C:\Users\termi\source\repos\c#\vsu\cg\kgTasks\kgFirst\obj\Debug\kgFirst.Forms.ChartForm.resources

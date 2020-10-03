@@ -31,6 +31,7 @@
             this.DdaBtn = new System.Windows.Forms.Button();
             this.brzBtn = new System.Windows.Forms.Button();
             this.byBtn = new System.Windows.Forms.Button();
+            this.chartBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // DdaBtn
@@ -63,11 +64,22 @@
             this.byBtn.UseVisualStyleBackColor = true;
             this.byBtn.Click += new System.EventHandler(this.byBtn_Click);
             // 
+            // chartBtn
+            // 
+            this.chartBtn.Location = new System.Drawing.Point(377, 12);
+            this.chartBtn.Name = "chartBtn";
+            this.chartBtn.Size = new System.Drawing.Size(177, 23);
+            this.chartBtn.TabIndex = 3;
+            this.chartBtn.Text = "Построение графиков";
+            this.chartBtn.UseVisualStyleBackColor = true;
+            this.chartBtn.Click += new System.EventHandler(this.ChartBtn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(741, 551);
+            this.Controls.Add(this.chartBtn);
             this.Controls.Add(this.byBtn);
             this.Controls.Add(this.brzBtn);
             this.Controls.Add(this.DdaBtn);
@@ -83,6 +95,7 @@
         private System.Windows.Forms.Button DdaBtn;
         private System.Windows.Forms.Button brzBtn;
         private System.Windows.Forms.Button byBtn;
+        private System.Windows.Forms.Button chartBtn;
     }
 }
 

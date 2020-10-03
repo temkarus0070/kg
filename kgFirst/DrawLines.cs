@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace kgFirst
 {
-    class Second
+    class DrawLine
     {
         public static void DDA(Graphics g,int x1, int y1, int x2, int y2)
         {
