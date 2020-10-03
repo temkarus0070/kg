@@ -13,6 +13,7 @@ namespace kgFirst.Forms
 {
     public partial class ChartForm : Form
     {
+        Function.functionFromX func;
         public ChartForm()
         {
             InitializeComponent();
@@ -26,6 +27,12 @@ namespace kgFirst.Forms
         private void RunBtn_Click(object sender, EventArgs e)
         {
             Function function = new Function(functionInputTextBox.Text);
+            func = function.func;
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(func(double.Parse(textBox1.Text)).ToString());
         }
     }
 }
