@@ -13,9 +13,11 @@ namespace kgFirst.Forms
 {
     public partial class ChartForm : Form
     {
+        Graphics g;
         Function.functionFromX func;
         public ChartForm()
         {
+            
             InitializeComponent();
         }
 
@@ -26,8 +28,19 @@ namespace kgFirst.Forms
 
         private void RunBtn_Click(object sender, EventArgs e)
         {
+            this.Paint += ChartForm_Paint;
+            this.Invalidate();
+            this.Update();
             Function function = new Function(functionInputTextBox.Text);
             func = function.func;
+        }
+
+        private void ChartForm_Paint(object sender, PaintEventArgs e)
+        {
+            g = this.CreateGraphics();
+            ChartPainter chartPainter = new ChartPainter();
+            chartPainter.PrintCoordinateSystem(g);
+          
         }
 
         private void Button1_Click(object sender, EventArgs e)
