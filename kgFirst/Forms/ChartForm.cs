@@ -17,7 +17,7 @@ namespace kgFirst.Forms
         Function.functionFromX func;
         public ChartForm()
         {
-            
+            this.DoubleBuffered = true;
             InitializeComponent();
         }
 
@@ -33,8 +33,8 @@ namespace kgFirst.Forms
             Function function = new Function(functionInputTextBox.Text);
             func = function.func;
             this.Paint += ChartForm_Paint;
-            this.Invalidate();
-            this.Update();
+      
+
 
         }
 
@@ -43,15 +43,17 @@ namespace kgFirst.Forms
             g = this.CreateGraphics();
             g.Clear(Color.White);
             ChartPainter chartPainter = new ChartPainter();
-            chartPainter.PrintCoordinateSystem(g);
-
+             chartPainter.PrintCoordinateSystem(g);
             chartPainter.PaintChart(func, g);
-          
+            g.Dispose();
+            this.Paint -= ChartForm_Paint;
+
+
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(func(double.Parse(textBox1.Text)).ToString());
+            MessageBox.Show(func(float.Parse(textBox1.Text)).ToString());
         }
     }
 }

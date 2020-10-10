@@ -8,7 +8,7 @@ namespace kgFirst.Second
 {
     public class Function
     {
-        public delegate double functionFromX(double x);
+        public delegate float functionFromX(float x);
         public functionFromX func;
         private Dictionary<string, double> ratios = new Dictionary<string, double>();
         public Function(string function)
@@ -42,7 +42,7 @@ namespace kgFirst.Second
             }
             else
             {
-                int num = 0;
+                double num = 0;
                 getNum(function,ref leftPtr,index,out num);
                 ratios["const"] = num;
             }
@@ -55,9 +55,9 @@ namespace kgFirst.Second
             {
                 int powNum = function.Substring(leftPtr, len).IndexOf("^");
                 int powNum1 = powNum;
-                int pow = 0;
+                double pow = 0;
                 getNum(function, ref powNum1, index, out pow);
-                int ratio = 0;
+                double ratio = 0;
                 getNum(function, ref leftPtr,Math.Abs( powNum -leftPtr-1), out ratio);
                 if(ratio==0)
                 {
@@ -73,7 +73,7 @@ namespace kgFirst.Second
             }
             else
             {
-                int num=0;
+                double num=0;
                 getNum(function, ref leftPtr, index - 1, out num);
                 ratios["1"] = num;
             }
@@ -82,7 +82,7 @@ namespace kgFirst.Second
 
 
 
-        public void getNum(string function,ref int leftPtr,int index,out int num)
+        public void getNum(string function,ref int leftPtr,int index,out double num)
         {
             num = 0;
             int len = index - leftPtr+1;
@@ -98,14 +98,14 @@ namespace kgFirst.Second
                 return;
             if (index>=0 && (function[index] == '-' || function[index] == '+'))
                 len--;
-            if (int.TryParse(function.Substring(leftPtr, len), out num))
+            if (double.TryParse(function.Substring(leftPtr, len), out num))
             {
                 leftPtr = index;
                 return;
             }
             if (len == 0)
                 len = 1;
-            if (int.TryParse(function.Substring(leftPtr + 1, len - 1), out num))
+            if (double.TryParse(function.Substring(leftPtr + 1, len - 1), out num))
             {
                 leftPtr = index;
                 return;
@@ -116,18 +116,19 @@ namespace kgFirst.Second
 
    
 
-        public double getValueFromFun(double x)
+        public float getValueFromFun(float x)
         {
-            double value = 0;
+            float value = 0;
             foreach (var e in ratios.Keys)
             {
                 if (e.Equals("const"))
                 {
-                    value += ratios[e];
+                    value += (float)ratios[e];
+                    
                 }
                 else
                 {
-                    value += ratios[e] * (Math.Pow(x, int.Parse(e)));
+                    value += (float)ratios[e] * (float)(Math.Pow(x, double.Parse(e)));
                 }
             }
             return value;
