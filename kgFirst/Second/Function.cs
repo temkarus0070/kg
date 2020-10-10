@@ -19,12 +19,22 @@ namespace kgFirst.Second
 
         public void getFun(string function)
         {
-            int parseNum = 0;
-            int len = 0;
+
             int leftPtr = 0;
             for (int i = 0; i < function.Length; i++)
             {
-
+                if(function.Length==1)
+                {
+                    double res = 0;
+                   if( double.TryParse(function,out res))
+                    {
+                        ratios["const"] = res;
+                    }
+                   else
+                    {
+                        ratios["1"] = 1;
+                    }
+                }
                 if ((i != 0 && ((function[i] == '+' || function[i] == '-')|| ( i==function.Length-1) )))
                 {
                     getFun(function, ref leftPtr, i);
@@ -75,7 +85,17 @@ namespace kgFirst.Second
             {
                 double num=0;
                 getNum(function, ref leftPtr, index - 1, out num);
-                ratios["1"] = num;
+                if(num==0)
+                {
+                    if (function[leftPtr] == 'x')
+                        ratios["1"] = 1;
+                    if (function[leftPtr] == '-')
+                        ratios["1"] = -1;
+                    if (function[leftPtr] == '+')
+                        ratios["1"] = 1;
+                }
+                else
+                    ratios["1"] = num;
             }
             leftPtr = index;
         }
@@ -96,7 +116,7 @@ namespace kgFirst.Second
             }
             if (num != 0)
                 return;
-            if (index>=0 && (function[index] == '-' || function[index] == '+'))
+            if (index>0 && (function[index] == '-' || function[index] == '+'))
                 len--;
             if (double.TryParse(function.Substring(leftPtr, len), out num))
             {
