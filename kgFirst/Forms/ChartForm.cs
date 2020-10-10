@@ -28,11 +28,13 @@ namespace kgFirst.Forms
 
         private void RunBtn_Click(object sender, EventArgs e)
         {
+            Function function = new Function(functionInputTextBox.Text);
+            func = function.func;
             this.Paint += ChartForm_Paint;
             this.Invalidate();
             this.Update();
-            Function function = new Function(functionInputTextBox.Text);
-            func = function.func;
+            this.Paint -= ChartForm_Paint;
+
         }
 
         private void ChartForm_Paint(object sender, PaintEventArgs e)
@@ -40,6 +42,8 @@ namespace kgFirst.Forms
             g = this.CreateGraphics();
             ChartPainter chartPainter = new ChartPainter();
             chartPainter.PrintCoordinateSystem(g);
+
+            chartPainter.PaintChart(func, g);
           
         }
 

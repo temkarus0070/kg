@@ -13,69 +13,106 @@ namespace kgFirst.Second
         private Dictionary<string, double> ratios = new Dictionary<string, double>();
         public Function(string function)
         {
-            int firstPtr = 0;
-            int secondPtr = 0;
-            double outParam = 0;
-            for (int i = 0; i < function.Length; i++)
-            {
-                if (function[i] == '+' || (function[i] == '-' && i != 0) || i == function.Length - 1)
-                {
-                    if (double.TryParse(function.Substring(firstPtr, Math.Abs(i - secondPtr + 1)), out outParam))
-                    {
-                        ratios["const"] = outParam;
-                        firstPtr = i + 1;
-                        secondPtr = i + 1;
-                    }
-                    else
-                    {
-                        if (function[i - 1] == 'x')
-                        {
-                            if (firstPtr != i - 1)
-                            {
-                                double.TryParse(function.Substring(firstPtr, Math.Abs(firstPtr - i) - 1), out outParam);
-                                ratios["1"] = outParam;
-                                firstPtr = i + 1;
-                                secondPtr = i + 1;
-                            }
-                            else
-                            {
-                                ratios["1"] = 1;
-                                firstPtr = i + 1;
-                                secondPtr = i + 1;
-                            }
-                        }
-                        else
-                        {
-                            string current = function.Substring(firstPtr, Math.Abs(firstPtr - (i))+1);
-                            int powChar =current.IndexOf('^');
-                            int len = 0;
-                            if (i == function.Length - 1)
-                            {
-                                len = Math.Abs((powChar) - i);
-                            }
-                            else
-                                len = Math.Abs((powChar) - i) - 1;
-                            int pow = int.Parse(current.Substring(powChar + 1, len));
-                            if (function[firstPtr + 1] == '^')
-                            {
-                                ratios[pow.ToString()] = 1;
-                                firstPtr = i + 1;
-                                secondPtr = i + 1;
-                            }
-                            else
-                            {
-                                string str = function.Substring(firstPtr, Math.Abs(firstPtr - powChar) - 1);
-                                ratios[pow.ToString()] = double.Parse(str);
-                                firstPtr = i + 1;
-                                secondPtr = i + 1;
-                            }
-
-                        }
-                    }
-                }
-            }
+            getFun(function);
             func = new functionFromX(getValueFromFun);
         }
+
+        public void getFun(string function)
+        {
+            int parseNum = 0;
+            int len = 0;
+            int leftPtr = 0;
+            for (int i = 0; i < function.Length; i++)
+            {
+
+                if ((i != 0 && (function[i] == '+' || function[i] == '-')|| ( i==function.Length-1) ))
+                {
+                    getFun(function, ref leftPtr, i);
+                }
+            }
+        }
+
+        public void getFun(string function,ref int leftPtr,int index)
+        {
+            int len = index - leftPtr+1;
+            
+            if(function.Substring(leftPtr,len).Contains("x"))
+            {
+                getXPow(function, ref leftPtr, index);
+            }
+            else
+            {
+                int num = 0;
+                getNum(function,ref leftPtr,index,out num);
+                ratios["const"] = num;
+            }
+        }
+
+        public void getXPow(string function,ref int leftPtr,int index)
+        {
+            int len = index - leftPtr + 1;
+            if(function.Substring(leftPtr,len).Contains("^"))
+            {
+                int powNum = function.Substring(leftPtr, len).IndexOf("^");
+                int powNum1 = powNum;
+                int pow = 0;
+                getNum(function, ref powNum1, index, out pow);
+                int ratio = 0;
+                getNum(function, ref leftPtr,Math.Abs( powNum -leftPtr-1), out ratio);
+                if(ratio==0)
+                {
+                    if(function[leftPtr]=='x')
+                        ratios[pow.ToString()] = 1;
+                    if(function[leftPtr]=='-')
+                        ratios[pow.ToString()] = -1;
+                    if (function[leftPtr] == '+')
+                        ratios[pow.ToString()] = 1;
+                }
+                else
+                    ratios[pow.ToString()] = ratio;
+            }
+            else
+            {
+                int num=0;
+                getNum(function, ref leftPtr, index - 1, out num);
+                ratios["1"] = num;
+            }
+            leftPtr = index;
+        }
+
+
+
+        public void getNum(string function,ref int leftPtr,int index,out int num)
+        {
+            num = 0;
+            int len = index - leftPtr+1;
+            if (len == 0)
+                len = 1;
+            if (len < 0)
+                return;
+            if (function.Substring(leftPtr, len).Contains("x"))
+            {
+                getNum(function, ref leftPtr, index-1, out num);
+            }
+            if (num != 0)
+                return;
+            if (index>=0 && (function[index] == '-' || function[index] == '+'))
+                len--;
+            if (int.TryParse(function.Substring(leftPtr, len), out num))
+            {
+                leftPtr = index;
+                return;
+            }
+            if (int.TryParse(function.Substring(leftPtr + 1, len - 1), out num))
+            {
+                leftPtr = index;
+                return;
+            }
+            
+
+        }
+
+   
 
         public double getValueFromFun(double x)
         {

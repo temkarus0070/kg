@@ -49,14 +49,7 @@ namespace kgFirst
         }
 
 
-        public static void By(Graphics g, int x1, int y1, int x2, int y2)
-        {
-            var step = Math.Abs(y2 - y1) > Math.Abs(x2 - x1);
-            if(step)
-            {
 
-            }
-        }
 
         /// <summary>
         /// Целая часть
