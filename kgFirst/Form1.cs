@@ -112,7 +112,7 @@ namespace kgFirst
         private void Form1_Paint1(object sender, PaintEventArgs e)
         {
             g.Clear(Color.White);
-            new DrawLine().ByDrawLine(g, 300, 300, 500, 500);
+            new DrawLine().ByDrawLine(g, 0, 0, 1800,1000);
         }
 
         private void ChartBtn_Click(object sender, EventArgs e)

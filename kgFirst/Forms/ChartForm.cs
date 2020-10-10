@@ -26,6 +26,8 @@ namespace kgFirst.Forms
             this.Size = new Size(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
         }
 
+        
+
         private void RunBtn_Click(object sender, EventArgs e)
         {
             Function function = new Function(functionInputTextBox.Text);
@@ -33,13 +35,13 @@ namespace kgFirst.Forms
             this.Paint += ChartForm_Paint;
             this.Invalidate();
             this.Update();
-            this.Paint -= ChartForm_Paint;
 
         }
 
         private void ChartForm_Paint(object sender, PaintEventArgs e)
         {
             g = this.CreateGraphics();
+            g.Clear(Color.White);
             ChartPainter chartPainter = new ChartPainter();
             chartPainter.PrintCoordinateSystem(g);
 

@@ -25,7 +25,7 @@ namespace kgFirst.Second
             for (int i = 0; i < function.Length; i++)
             {
 
-                if ((i != 0 && (function[i] == '+' || function[i] == '-')|| ( i==function.Length-1) ))
+                if ((i != 0 && ((function[i] == '+' || function[i] == '-')|| ( i==function.Length-1) )))
                 {
                     getFun(function, ref leftPtr, i);
                 }
@@ -103,6 +103,8 @@ namespace kgFirst.Second
                 leftPtr = index;
                 return;
             }
+            if (len == 0)
+                len = 1;
             if (int.TryParse(function.Substring(leftPtr + 1, len - 1), out num))
             {
                 leftPtr = index;

@@ -53,9 +53,17 @@ namespace kgFirst.Second
         public Point GetTruePoint(int x,int y)
         {
             Point newPoint = new Point(0,0);
+            if(x==0)
+            {
+                newPoint.X = 50;
+            }
+            if(y==0)
+            {
+                newPoint.Y = 50;
+            }
             if(x<0)
             {
-                newPoint.X = Math.Abs(-50 + x);
+                newPoint.X = Math.Abs(-50 - x);
             }
             if(x>0)
             {
@@ -76,11 +84,10 @@ namespace kgFirst.Second
 
         public void PaintChart(Function.functionFromX function,Graphics graphics)
         {
-           
             List<Point> list = new List<Point>();
             bool first = true;
             Point point1 = new Point();
-            for(int x=-50;x<=50;x++)
+            for (int x = -50; x <= 50; x++)
             {
                 double y = function(x);
                 if (first)
@@ -92,17 +99,15 @@ namespace kgFirst.Second
                 {
 
                     Point point = GetTruePoint(x, (int)y);
-                    if(GetDistanceBetweenPoints(point1,point)>=3)
-                    {
-                        CallBy(graphics, point1, point);
-                        list.Add(point1);
-                        list.Add(point);
-                        point1 = point;
-                    }
-                 
+                    CallBy(graphics, point1, point);
+                    point1 = point;
+
+
+
                 }
 
             }
+            graphics.Dispose();
            
         }
 
