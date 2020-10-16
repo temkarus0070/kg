@@ -19,6 +19,7 @@ namespace kgFirst.Forms
         {
             this.DoubleBuffered = true;
             InitializeComponent();
+         
         }
 
         private void ChartForm_Load(object sender, EventArgs e)
@@ -30,26 +31,30 @@ namespace kgFirst.Forms
 
         private void RunBtn_Click(object sender, EventArgs e)
         {
+            
+            g = this.CreateGraphics();
             Function function = new Function(functionInputTextBox.Text);
             func = function.func;
-            this.Paint += ChartForm_Paint;
-      
-
-
+          paintChart(g);
+            this.Resize+=Paint_Form;
         }
 
-        private void ChartForm_Paint(object sender, PaintEventArgs e)
+         private void Paint_Form(object sender, EventArgs e)
         {
-            g = this.CreateGraphics();
-            g.Clear(Color.White);
+             g = this.CreateGraphics();
+         paintChart(g);
+        }
+
+       
+
+        private void paintChart(Graphics g)
+            {
+            g.Clear(Color.White);  
             ChartPainter chartPainter = new ChartPainter();
              chartPainter.PrintCoordinateSystem(g);
             chartPainter.PaintChart(func, g);
             g.Dispose();
-            this.Paint -= ChartForm_Paint;
-
-
-        }
+}
 
         private void Button1_Click(object sender, EventArgs e)
         {

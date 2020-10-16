@@ -12,7 +12,7 @@ namespace kgFirst.Second
     {
         private Size size = new Size(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
         private const int maxX = 50;
-        private const float dxFor = 0.01f;
+        private const float dxFor = 0.1f;
         private DrawLine drawLine = new DrawLine();
         public Function Function { get; set; }
         private int dx;
@@ -20,6 +20,7 @@ namespace kgFirst.Second
         public void PrintCoordinateSystem(Graphics graphics)
         {
 
+           
             var x1 = dx * 50;
             var y1 = 0;
             var x2 = dx * 50;
@@ -114,7 +115,7 @@ namespace kgFirst.Second
                 }
 
             }
-            graphics.Dispose();
+          
 
         }
 
