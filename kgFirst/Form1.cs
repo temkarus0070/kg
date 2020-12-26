@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FinalTask;
 
 namespace kgFirst
 {
@@ -118,6 +119,12 @@ namespace kgFirst
         private void ChartBtn_Click(object sender, EventArgs e)
         {
             ChartForm form = new ChartForm();
+            form.Show();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            FinalTaskForm form = new FinalTaskForm();
             form.Show();
         }
     }

@@ -32,11 +32,12 @@
             this.brzBtn = new System.Windows.Forms.Button();
             this.byBtn = new System.Windows.Forms.Button();
             this.chartBtn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // DdaBtn
             // 
-            this.DdaBtn.Location = new System.Drawing.Point(13, 13);
+            this.DdaBtn.Location = new System.Drawing.Point(236, 12);
             this.DdaBtn.Name = "DdaBtn";
             this.DdaBtn.Size = new System.Drawing.Size(75, 23);
             this.DdaBtn.TabIndex = 0;
@@ -46,9 +47,9 @@
             // 
             // brzBtn
             // 
-            this.brzBtn.Location = new System.Drawing.Point(138, 12);
+            this.brzBtn.Location = new System.Drawing.Point(326, 12);
             this.brzBtn.Name = "brzBtn";
-            this.brzBtn.Size = new System.Drawing.Size(75, 23);
+            this.brzBtn.Size = new System.Drawing.Size(99, 23);
             this.brzBtn.TabIndex = 1;
             this.brzBtn.Text = "Brezhenheim";
             this.brzBtn.UseVisualStyleBackColor = true;
@@ -56,7 +57,7 @@
             // 
             // byBtn
             // 
-            this.byBtn.Location = new System.Drawing.Point(262, 11);
+            this.byBtn.Location = new System.Drawing.Point(431, 10);
             this.byBtn.Name = "byBtn";
             this.byBtn.Size = new System.Drawing.Size(75, 23);
             this.byBtn.TabIndex = 2;
@@ -66,7 +67,7 @@
             // 
             // chartBtn
             // 
-            this.chartBtn.Location = new System.Drawing.Point(377, 12);
+            this.chartBtn.Location = new System.Drawing.Point(526, 11);
             this.chartBtn.Name = "chartBtn";
             this.chartBtn.Size = new System.Drawing.Size(177, 23);
             this.chartBtn.TabIndex = 3;
@@ -74,11 +75,22 @@
             this.chartBtn.UseVisualStyleBackColor = true;
             this.chartBtn.Click += new System.EventHandler(this.ChartBtn_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 10);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(191, 25);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Визуализация сортировки";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(741, 551);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.chartBtn);
             this.Controls.Add(this.byBtn);
             this.Controls.Add(this.brzBtn);
@@ -96,6 +108,7 @@
         private System.Windows.Forms.Button brzBtn;
         private System.Windows.Forms.Button byBtn;
         private System.Windows.Forms.Button chartBtn;
+        private System.Windows.Forms.Button button1;
     }
 }
 

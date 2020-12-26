@@ -18,3 +18,4 @@ C:\Users\termi\source\repos\c#\vsu\cg\kgTasks\kgFirst\obj\Debug\kgFirst.csproj.C
 C:\Users\termi\source\repos\c#\vsu\cg\kgTasks\kgFirst\obj\Debug\kgFirst.exe
 C:\Users\termi\source\repos\c#\vsu\cg\kgTasks\kgFirst\obj\Debug\kgFirst.pdb
 C:\Users\termi\source\repos\c#\vsu\cg\kgTasks\kgFirst\obj\Debug\kgFirst.Forms.ChartForm.resources
+C:\Users\termi\source\repos\c#\vsu\cg\kgTasks\kgFirst\obj\Debug\FinalTask.FinalTaskForm.resources

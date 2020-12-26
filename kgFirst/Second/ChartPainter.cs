@@ -12,7 +12,7 @@ namespace kgFirst.Second
     {
         private Size size = new Size(Screen.PrimaryScreen.Bounds.Width, Screen.PrimaryScreen.Bounds.Height);
         private const int maxX = 50;
-        private const float dxFor = 0.1f;
+        private const float dxFor = 0.005f;
         private DrawLine drawLine = new DrawLine();
         public Function Function { get; set; }
         private int dx;

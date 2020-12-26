@@ -74,6 +74,13 @@
     <Compile Include="Forms\ChartForm.Designer.cs">
       <DependentUpon>ChartForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fourth\FinalTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fourth\FinalTask.designer.cs">
+      <DependentUpon>FinalTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fourth\SortWithPaint.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
@@ -87,6 +94,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ChartForm.resx">
       <DependentUpon>ChartForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fourth\FinalTask.resx">
+      <DependentUpon>FinalTask.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="obj\Debug\kgFirst.Form1.resources" />
     <EmbeddedResource Include="obj\Debug\kgFirst.Properties.Resources.resources" />
